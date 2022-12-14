@@ -52,7 +52,7 @@ jobs:
     name: Ping some endopint to get access
     runs-on: ubuntu-latest
     container: 
-      image: ${{ secrets.DOCKER_HUB_USERNAME }}/workflow:hw
+      image: mrzend/workflow:hw
     steps:
       - name: Check http status code
         uses: lakuapik/gh-actions-http-status@v1
