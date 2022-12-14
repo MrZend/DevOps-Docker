@@ -83,7 +83,7 @@ jobs:
 
       - name: Run container
         run: |
-          docker run -p 8000:80 ${{ secrets.DOCKER_HUB_USERNAME }}/workflow:hw
+          docker run -d -p 8000:80 ${{ secrets.DOCKER_HUB_USERNAME }}/workflow:hw
           sleep 15
 
       - name: check
