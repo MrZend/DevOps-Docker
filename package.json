@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint:js": "eslint '**/*.js' --ignore-pattern node\_modules/",
-    "lint:js:fix": "eslint '**/*.js' --ignore-pattern node\_modules/ --fix"
+    "lint:js": "eslint '**/*.js' --ignore-pattern node\_modules/"
   },
   "keywords": [],
   "author": "",
