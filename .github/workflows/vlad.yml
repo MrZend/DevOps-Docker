@@ -26,6 +26,7 @@ jobs:
 
   docker-build:
     name: Build and push docker image
+    needs: code-quality
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,12 +51,14 @@ jobs:
 
   check_access:
     name: Ping some endopint to get access
+    needs: docker-build
     runs-on: ubuntu-latest
     container: 
       image: mrzend/workflow:hw
+      port: 8000:80
     steps:
       - name: Check http status code
         uses: lakuapik/gh-actions-http-status@v1
         with:
-          sites: '["localhost:80"]'
+          sites: '["localhost:8000"]'
           expected: '[200]'
