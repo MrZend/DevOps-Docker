@@ -53,8 +53,11 @@ jobs:
     name: Ping some endopint to get access
     needs: docker-build
     runs-on: ubuntu-latest
-    container: 
-      image: mrzend/workflow:hw
+    services:
+      app:
+        image: mrzend/workflow:hw
+        ports:
+           - 8000:80
     steps:
       - name: Check http status code
         uses: lakuapik/gh-actions-http-status@v1
