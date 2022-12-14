@@ -2,7 +2,7 @@ name: homework-devops
 on: 
   push:
     branches:
-      - 'release/*'
+      - 'dev'
 
 jobs:
   code-quality:
