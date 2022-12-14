@@ -1,9 +1,9 @@
-const express = require("express")
+const express = require('express');
 
-const app = express()
+const app = express();
 
-app.get("/", (req, res) => {
-  res.send("<h1>Believe in ЗСУ</h1>");
+app.get('/', (req, res) => {
+  res.send('<h1>Believe in ЗСУ</h1>');
 });
 
 const port = process.env.PORT || 80;
