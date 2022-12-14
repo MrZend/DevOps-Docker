@@ -1,8 +1,8 @@
 name: homework-devops
 on: 
-  merge:
-    branches: 
-      - main
+  push:
+    branches:
+      - 'release/*'
 
 jobs:
   code-quality:
