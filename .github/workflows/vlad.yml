@@ -55,7 +55,6 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: mrzend/workflow:hw
-      port: 8000:80
     steps:
       - name: Check http status code
         uses: lakuapik/gh-actions-http-status@v1
