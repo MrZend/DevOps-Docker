@@ -72,3 +72,20 @@ jobs:
         run: |
           docker load --input /tmp/myimage.tar
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/workflow:hw
+
+  check-access:
+    name: Check access
+    needs: docker-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Run container
+        run: |
+          docker run -p 8000:80 ${{ secrets.DOCKER_HUB_USERNAME }}/workflow:hw
+          sleep 15
+
+      - name: check
+        run: |
+          curl -LI localhost:8000 -o /dev/null -w '%{http_code}\n' -s
